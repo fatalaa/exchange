@@ -20,5 +20,13 @@
     "xml2js": "*",
     "winston": "*",
     "yuidocjs": "*"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.5",
+    "gulp-concat": "^2.2.0",
+    "gulp-jshint": "^1.6.3",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.1",
+    "gulp-yuidoc": "^0.1.2"
   }
 }

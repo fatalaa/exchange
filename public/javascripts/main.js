@@ -26,7 +26,7 @@ function fetchHistory() {
         type: 'GET',
         dataType: 'json',
         success: function(json) {
-            var palette = new Rickshaw.Color.Palette({scheme: 'classic9'});
+            var palette = new Rickshaw.Color.Palette({scheme: 'munin'});
 
             var graph = new Rickshaw.Graph({
                 element: document.getElementById('chart'),
