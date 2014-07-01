@@ -2,10 +2,14 @@ doctype html
 html
     head
         title Chart page
-        link(type='text/css', rel='stylesheet', src='/stylesheets/rickshaw.min.css')
-        link(type='text/css', rel='stylesheet', src='/stylesheets/jquery-ui.css')
-        link(type='text/css', rel='stylesheet', src='/stylesheets/extensions.css')
+        link(type='text/css', rel='stylesheet', href='/stylesheets/rickshaw.min.css')
+        link(type='text/css', rel='stylesheet', href='/stylesheets/jquery-ui.css')
         style(type='text/css').
+            #legend {
+                display: inline-block;
+                position: relative;
+                left: 8px;
+            }
             .rickshaw_graph .detail .x_label {
                 display: none;
             }
@@ -40,10 +44,10 @@ html
     body
         div(id='chart_container')
             div(id='chart', class='rickshaw_graph')
-                div(id='detail')
+                div(class='detail')
             div(id='legend_container')
                 div(id='smoother', title='Smoothing')
-                div(id='legend')
+                div(id='legend', class='rickshaw_legend')     
             div(id='slider')
         script.
             fetchHistory();

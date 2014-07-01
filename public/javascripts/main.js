@@ -38,13 +38,23 @@ function fetchHistory() {
             graph.render();
 
             var hoverDetail = new Rickshaw.Graph.HoverDetail({
-                graph: graph,
-                formatter: function(series, x, y) {
-                    var date = '<span class="date">' + new Date(x * 1000).toUTCString() + '</span>';
-                    var swatch = '<span class="detail_swatch" style="background-color:' + series.color + '></span>';
-                    return swatch + series.name + ': ' + parseFloat(y) + '<br/>' + date;
-                }
+                graph: graph
             });
+            
+            var legend = new Rickshaw.Graph.Legend({
+                graph: graph,
+                element: document.getElementById('legend')
+            });
+            
+            var shelving = new Rickshaw.Graph.Behavior.Series.Toggle({
+                graph: graph,
+                legend: legend
+            });
+            
+            var axes = new Rickshaw.Graph.Axis.Time({
+                graph: graph
+            });
+            axes.render();
         },
         error: function(xhr, status) {
             alert('Cannot generate chart');
