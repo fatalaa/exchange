@@ -2,6 +2,18 @@ doctype html
 html
   head
     title= title
+    link(type='text/css', rel='stylesheet', href='/stylesheets/rickshaw.min.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/jquery-ui.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/jquery-2.1.1.min.js')
+    script.
+        jQuery.noConflict();
+    script(src='/javascripts/d3.min.js')
+    script(src='/javascripts/d3.layout.min.js')
+    script(src='/javascripts/jquery-ui.min.js')
+    script(src='/javascripts/rickshaw.min.js')
+    script(src='/javascripts/extensions.js')
+    script(src='/javascripts/ui-util.js')
+    script(src='/javascripts/main.js')
   body
     block content
