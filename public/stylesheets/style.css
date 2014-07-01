@@ -27,7 +27,7 @@ h1 {
 /* MAIN ELEMENTS */
 .container {
     margin: 0 auto;
-    width: 978px;
+    width: 1218px;
 }
 
 .data-container {
@@ -70,6 +70,10 @@ h1 {
 
 .input-measure {
     width: 50%;
+}
+
+.hidden {
+    display: none;
 }
 /*RICKSHAW STYLES*/
 #legend {

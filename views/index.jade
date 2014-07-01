@@ -39,9 +39,9 @@ block content
                         option(value='EUR') EUR
                     label(class='result-label', for='input-measure')
                 div(class='clear')
-        div(class='refresh', onclick='fetchHistory()')
-            input(type='submit', value='Show chart', class='refresh-btn')
-        div(id='chart_container')
+        div(class='refresh', id='load_chart', onclick='fetchHistory()')
+            input(type='submit', value='Show chart', class='refresh-btn', id='load_chart_button')
+        div(id='chart_container', class='hidden')
             div(id='chart', class='rickshaw_graph')
                 div(class='detail')
             div(id='legend_container')

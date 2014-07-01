@@ -55,6 +55,8 @@ function fetchHistory() {
                 graph: graph
             });
             axes.render();
+            $('#chart_container').show();
+            $('#load_chart_button').attr('disabled', 'disabled');
         },
         error: function(xhr, status) {
             alert('Cannot generate chart');
