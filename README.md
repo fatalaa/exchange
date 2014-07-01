@@ -4,4 +4,4 @@
 # TODO
   * Documentation with YUIDoc  
   * Writing build with Grunt/Gulp  
-  * More fancy UI to chart
+  * More fancy UI for chart
