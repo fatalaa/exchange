@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='/javascripts/main.js')
+    script(src='/javascripts/ui-util.js')
+    script.
+        $(document).ready(function() {
+            fetchLatest();
+            input = $('.input-measure');
+            input.keyup(function() {
+                var result = exchange(input.val(), $('.base-select').val(), $('.res-select').val());
+                $('.result-label').text(result.toFixed(5));
+            });
+            $('.base-select').change(function() {
+                    var result = exchange(input.val(), $('.base-select').val(), $('.res-select').val());
+                    $('.result-label').text(result.toFixed(5));
+            });
+            $('.res-select').change(function() {
+                    var result = exchange(input.val(), $('.base-select').val(), $('.res-select').val());
+                    $('.result-label').text(result.toFixed(5));
+            });
+        });
+    div(class='container')
+        div(class='refresh', onclick='fetchLatest()')
+            input(type='submit', value='Refresh', class='refresh-btn')
+        div(class='data-container')
+            div(class='loading-indicator')
+                img(src='images/loading.gif')
+            div
+                div(class='float-left currency')
+                    h1 Base currency
+                    input(type='text', class='input-measure', id='input-measure')
+                    select(class='base-select')
+                        option(value='EUR') EUR
+                div(class='float-left currency result')
+                    h1 Result currency
+                    select(class='res-select')
+                        option(value='EUR') EUR
+                    label(class='result-label', for='input-measure')
+                div(class='clear')
+        form(action='/chart', method='get')
+            input(type='submit', value='Go to chart', class='refresh-btn')
