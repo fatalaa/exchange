@@ -7,6 +7,8 @@ var cache = require('memory-cache');
 var xml2js = require('xml2js');
 var winston = require('winston');
 
+winston.add(winston.transports.File, {filename: 'app.log', level: 'debug'});
+
 /* GET home page. */
 router.get('/', function(req, res) {
     winston.debug('Rendering index page');
@@ -59,8 +61,4 @@ router.get('/history', function(req, res) {
     winston.debug('Sending history object to client');
     res.send(JSON.stringify(cache.get('history')));
 });
-
-//TODO
-//Implement a logging service to store client-side events at the server
-
 module.exports = router;
