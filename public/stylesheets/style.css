@@ -34,6 +34,10 @@ h1 {
     position: relative;
 }
 
+.button-container {
+    padding-left: 21.5%;
+}
+
 /* INDEX.JADE */
 .currency {
     width: 33%;
@@ -47,7 +51,7 @@ h1 {
 }
 
 .refresh {
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .refresh input {
