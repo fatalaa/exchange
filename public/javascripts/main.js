@@ -21,7 +21,7 @@ function fetchLatest() {
     });
 }
 
-function fetchHistory(types) {
+function fetchHistory() {
     jQuery.ajax({
         url: '/history',
         data: null,
