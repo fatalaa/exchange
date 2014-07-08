@@ -22,6 +22,8 @@ function fetchLatest() {
 }
 
 function fetchHistory() {
+    var baseCurrency = $('.base-select').val();
+    var resCurrency = $('.res-select').val();
     jQuery.ajax({
         url: '/history',
         data: null,
@@ -41,6 +43,18 @@ function fetchHistory() {
                 width: 960,
                 height: 500
             });
+            
+            //console.log(graph.series);
+            for(var i = 0; i < graph.series.length; i++) {
+                if (graph.series[i].name === baseCurrency || graph.series[i].name === resCurrency) {
+                    graph.series[i].enabled = true;
+                }
+                else {
+                    graph.series[i].disabled = true;
+                }
+                console.log(graph.series[i]);
+                graph.update();
+            }
             graph.render();
 
             var hoverDetail = new Rickshaw.Graph.HoverDetail({
@@ -61,6 +75,14 @@ function fetchHistory() {
                 graph: graph
             });
             axes.render();
+            
+            var yAxis = new Rickshaw.Graph.Axis.Y({
+                graph: graph,
+                orientation: 'left',
+                tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+                element: document.getElementById('y_axis')
+            });
+            yAxis.render();
             $('#chart_container').show();
             $('#load_chart_button').attr('disabled', 'disabled');
         },

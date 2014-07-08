@@ -15,10 +15,12 @@ block content
             $('.base-select').change(function() {
                     var result = exchange(input.val(), $('.base-select').val(), $('.res-select').val());
                     $('.result-label').text(result.toFixed(5));
+                    fetchHistory();000
             });
             $('.res-select').change(function() {
                     var result = exchange(input.val(), $('.base-select').val(), $('.res-select').val());
                     $('.result-label').text(result.toFixed(5));
+                    fetchHistory();
             });
         });
     div(class='container')
