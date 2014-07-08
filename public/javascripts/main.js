@@ -52,7 +52,6 @@ function fetchHistory() {
                 else {
                     graph.series[i].disabled = true;
                 }
-                console.log(graph.series[i]);
                 graph.update();
             }
             graph.render();
@@ -141,9 +140,6 @@ function getChartDOM() {
     chartContainer.addClass('hidden');
     chartContainer.attr('id', 'chart_container');
     
-    var h6 = $('<h6></h6>');
-    h6.text('*The chart shows that how much money you need if you want to buy 1 EUR');
-    
     var chartDiv = $('<div></div>');
     chartDiv.addClass('rickshaw_graph');
     chartDiv.attr('id', 'chart');
@@ -168,8 +164,7 @@ function getChartDOM() {
     
     var sliderDiv = $('<div></div>');
     sliderDiv.attr('id', 'slider');
-    
-    chartContainer.append(h6);
+
     chartContainer.append(chartDiv);
     chartContainer.append(legendContainer);
     chartContainer.append(sliderDiv);

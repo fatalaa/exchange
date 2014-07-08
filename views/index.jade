@@ -15,7 +15,7 @@ block content
             $('.base-select').change(function() {
                     var result = exchange(input.val(), $('.base-select').val(), $('.res-select').val());
                     $('.result-label').text(result.toFixed(5));
-                    fetchHistory();000
+                    fetchHistory();
             });
             $('.res-select').change(function() {
                     var result = exchange(input.val(), $('.base-select').val(), $('.res-select').val());
@@ -44,7 +44,6 @@ block content
         div(class='refresh', id='load_chart', onclick='fetchHistory()')
             input(type='submit', value='Show me all the rates', class='refresh-btn', id='load_chart_button')
         div(id='chart_container', class='hidden')
-            h6 *The chart shows that how much money you need if you want to buy 1 EUR
             div(id='chart', class='rickshaw_graph')
                 div(class='detail')
             div(id='legend_container')
